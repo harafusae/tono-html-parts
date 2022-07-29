@@ -1,0 +1,72 @@
+<!--
+    settings / checkout /  注文状況　に追加。
+
+-->
+<style>
+.button {
+
+    width: 100%;
+    background-color: #171c61;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFF;
+    text-align: center;
+}
+
+@media screen and (min-width: 749px) and  (max-width: 989px){
+    .button {
+        font-size: 1.4rem;
+    }    
+}    
+
+@media screen and (min-width: 990px){
+    .button {
+        max-width: 32.0rem;
+        font-size: 1.4rem!important;
+    }
+}
+
+#copyTarget {
+    width: 92%;
+    padding: 0.6rem;
+    border: 1px solid #5187EB;
+    border-radius: 4px;
+}
+
+.content-box__row img {
+    width: 100%;
+    padding: 1.2rem 0;
+}
+
+</style>
+
+
+{% if attributes %}
+ <script>
+
+   Shopify.Checkout.OrderStatus.addContentBox(
+
+    '（コメント追加可能エリア）<br><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/bnr-egift.png?v=1655692797" width="60%">下記、商品注文用URLをコピーし、受取人様へメッセージなどでご送信ください。<br>こちらは購入後のメールアドレスにもお送りしております。<br><input id="copyTarget" type="text" value="https://light-i-monogift.com/xxxxxxxxxxxx893159e5b29ee3725add7825a5bc436" readonly>',
+    '<div class="button"><button onclick="copyToClipboard()">URLをコピーする</button></div>'
+
+    )
+
+
+    function copyToClipboard() {
+       // コピー対象をJavaScript上で変数として定義する
+       var copyTarget = document.getElementById("copyTarget");
+
+       // コピー対象のテキストを選択する
+       copyTarget.select();
+
+       // 選択しているテキストをクリップボードにコピーする
+       document.execCommand("Copy");
+
+       // コピーをお知らせする
+       alert("コピーできました！ : " + copyTarget.value);
+   }
+
+ </script>
+{% endif %}

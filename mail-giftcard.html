@@ -1,5 +1,6 @@
-{% capture email_title %}ギフトカードをお届けします！ {% endcapture %}
-{% capture email_body %}{% if gift_card.customer %}{{ gift_card.customer.last_name }}様、{% endif %}{{ gift_card.balance | money_without_trailing_zeros }}分のギフトカードです。是非お買い物を楽しんでくださいませ。{% endcapture %}
+{% capture email_title %}【とうのういーもの】ギフト商品カタログURLのお知らせ {% endcapture %}
+{% capture email_body %}{% if gift_card.customer %}{{ gift_card.customer.last_name }}様、{% endif %}この度は、「いーものギフト」をご利用頂き、誠にありがとうございます。お客様のご注文は、以下の内容で承りました。
+{% endcapture %}
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,13 +31,10 @@
               <table class="row">
                 <tr>
                   <td class="shop-name__cell">
-                    {%- if shop.email_logo_url %}
-                      <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
-                    {%- else %}
-                      <h1 class="shop-name__text">
-                        <a href="{{shop.url}}">{{ shop.name }}</a>
-                      </h1>
-                    {%- endif %}
+                    <h1 class="shop-name__text">
+                      <a href="{{shop.url}}">いーものギフト byとうのういーもの</a>
+                    </h1>
+                      <img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/bnr-egift.png?v=1655692797" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
                   </td>
 
                 </tr>
@@ -51,7 +49,7 @@
   </tr>
 </table>
 
-          <table class="row content">
+  <table class="row content">
   <tr>
     <td class="content__cell">
       <center>
@@ -67,29 +65,55 @@
   </tr>
   <tr>
     <td class="actions__cell">
-      <table class="button main-action-cell">
+
+      <div giftcard-desc>
+          「いーものギフト」を贈る<br>
+            how to
+
+            <h3>・LINEをご利用の場合</h3>
+            下のLINEアイコンを押してください。
+            LINEアプリが立ち上がったら、コメント欄にお祝いの言葉などメッセージを入力し、受取人様のアカウントを指定の上、送信してください。
+            <br>
+            <br>
+            <h3>・その他SNS（Instagram、Facebook、Twitterなど）をご利用の場合</h3>
+            下記の専用URLをコピーし、メッセージなどでご送信ください。
+            <br>
+            <a href="https://light-i-monogift.com/">https://light-i-monogift.com/"></a>
+            <!-- <input id="copyTarget" type="text" value="https://light-i-monogift.com/" readonly>
+            <button onclick="copyToClipboard()">URLをコピーする</button> -->
+            ※QRの方がいいのか？応相談
+
+        <br>
+        		ギフトコード：{{gift_card.code}}
+        <br>
+        
+            <h3>今後の流れ</h3>
+            ①受取人様には、こちらのURLから専用ページにて、ご希望の商品・お届け先住所／日時をご入力いただきます。
+            ※ここにBサイトのキャプチャサンプル画像※<br>
+            <br>
+            ②当店からお届け先にギフトを送付いたします。<br>
+            <br>
+            ※包装紙・のしは、いーものギフトご注文ご指定いただいたものを使用します。<br>
+            もし変更をご希望の際は、お手数ですが<a href="###">公式LINE窓口</a>までお知らせください。
+      </div>      
+
+      <!-- <table class="button main-action-cell">
         <tr>
           <td class="button__cell"><a href="{{ gift_card.url }}" class="button__text">ギフトカードを見る</a></td>
         </tr>
-      </table>
+      </table> -->
       {% if shop.url %}
-    <table class="link secondary-action-cell">
-      <tr>
-        <td class="link__cell">または<a href="{{ shop.url }}">ショップにアクセスする</a></td>
-      </tr>
-    </table>
-{% endif %}
+        <table class="link secondary-action-cell">
+          <tr>
+            <td class="link__cell"><a href="{{ shop.url }}">ショップにアクセスする</a></td>
+          </tr>
+        </table>
+      {% endif %}
 
     </td>
   </tr>
 </table>
 
-
-            {% if gift_card.pass_url %}
-              <a href="{{ gift_card.pass_url }}" class="apple-wallet-button">
-                <img src="{{ 'gift-card/add-to-apple-wallet.png' | shopify_asset_url }}" alt="Add to Apple Wallet" width="120" height="40">
-              </a>
-            {% endif %}
 
             </td>
           </tr>
@@ -120,5 +144,22 @@
         </td>
       </tr>
     </table>
+
+    <script>
+      function copyToClipboard() {
+          // コピー対象をJavaScript上で変数として定義する
+          var copyTarget = document.getElementById("copyTarget");
+   
+          // コピー対象のテキストを選択する
+          copyTarget.select();
+   
+          // 選択しているテキストをクリップボードにコピーする
+          document.execCommand("Copy");
+   
+          // コピーをお知らせする
+          alert("コピーできました！ : " + copyTarget.value);
+      }
+   </script>
+
   </body>
 </html>
