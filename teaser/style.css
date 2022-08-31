@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('teaser-bg.png');
+    background-repeat: repeat;
+    z-index: 0;
+}
+
+main {
+    margin-top: 0;
+}
+
+.teaser-wrap img {
+    width: 100%;
+}
+
+.teaser-wrap {
+    width: auto;
+    margin: auto;
+    background: #FFF;
+    z-index: 1;
+}
+
+.teaser-header {
+    /* width: 404px; */
+}
+
+.teaser-header-logo {
+    width: 53%;
+    margin: 0 auto;
+}
+
+.teaser-content {
+    text-align: center;
+}
+
+.teaser-date {
+    /* width: 365px; */
+    width: 70%;
+    margin: 36px auto 0;
+}
+
+.teaser-copy {
+    /* width: 426px; */
+    width: 80%;
+    margin: 50px auto 0;
+}
+
+
+.teaser-slider-wrap {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.teaser-footer {
+    position: relative;
+    background-color: #00A75B;
+    padding: 50px 0;
+}
+
+.teaser-footer::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: ' ';
+    display: block;
+    width: 147px;
+    height: 126px;
+    background-image: url('teaser-tsutsumu.png');
+    background-size: contain;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.teaser-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+a.teaser-link {
+    position: relative;
+    display: block;
+    background-color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+a.teaser-link::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 32px;
+    height: 33px;
+    background: url('teaser-link-arrow.png') no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+}    
+
+.teaser-line-pc {
+    display: none;
+    width: 461px;
+    margin: auto;
+}
+
+.teaser-line-sp {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.teaser-line-desc-sp {
+    margin-bottom: 30px;
+}
+
+.teaser-link-sp {
+    margin-bottom: 10%;
+}
+
+.teaser-link-sp  img { 
+    width: 50%;
+}
+
+.teaser-line-sp .sp-left { 
+    padding-right: 20px;
+}   
+
+@media screen and (min-width: 750px) {
+
+    .teaser-wrap {
+        width: 655px;
+    }    
+
+    .teaser-line-pc {
+        display: block;
+    }
+
+    .teaser-line-sp {
+        display: none;
+    }
+
+    .teaser-header {
+        max-width: 404px;
+    }
+    .teaser-date {
+        width: 365px;
+    }
+    .teaser-copy {
+        width: 426px;
+    }        
+
+}

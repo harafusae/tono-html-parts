@@ -1,0 +1,307 @@
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+ 
+<!-- JavaScript -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<style>
+
+#shopify-section-main-password-header {
+    /* opacity: 0; */
+}
+
+.password-modal__content {
+    position: fixed;
+    top:  0;
+}
+
+.password-modal {
+    display: block;
+    width: 100%;
+}
+
+details.modal .modal__toggle-open:hover {
+    background-color: yellow;
+}
+
+.password-link {
+    opacity: 0;
+}
+
+.password-link svg {
+    width: 20rem;
+    height: 20rem;
+}
+
+.password-header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.password-header {
+    text-indent: -99999px;
+}    
+
+.password-main {
+    background-image: url('https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-bg.png?v=1661225563')!important;
+    background-repeat: repeat;
+    padding: 0 4%;
+}
+
+main {
+    margin-top: 0;
+}
+
+.teaser-wrap img {
+    width: 100%;
+}
+
+.teaser-wrap {
+    width: 100%;
+    margin: auto;
+    background: #FFF;
+    z-index: 1;
+}
+
+@media screen and (min-width: 750px) {
+    .teaser-wrap {
+        width: 655px!important;
+        margin: auto;
+        background: #FFF;
+        z-index: 1;
+    }
+}
+
+.teaser-header {
+    margin: auto;
+}
+
+.teaser-header-logo {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.teaser-content {
+    text-align: center;
+}
+
+.teaser-date {
+    width: 80%;
+    margin: 26px auto 0;
+}
+
+.teaser-copy {
+    width: 80%;
+    margin: 50px auto 0;
+}
+
+.teaser-slider-wrap {
+    margin-top: 10px;
+    margin-bottom: 120px;
+}
+
+.teaser-slider {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.teaser-slider img {
+    width: 33vw;
+}
+
+.teaser-footer {
+    position: relative;
+    background-color: #00A75B;
+    padding: 50px 0;
+}
+
+.teaser-footer::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: ' ';
+    display: block;
+    width: 147px;
+    height: 126px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-tsutsumu.png?v=1661226063');
+    background-size: contain;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.teaser-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+a.teaser-link {
+    position: relative;
+    display: block;
+    background-color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+a.teaser-link::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 32px;
+    height: 33px;
+    background: url('https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-link-arrow.png?v=1661228184') no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+}    
+
+.teaser-line-pc {
+    display: none;
+    width: 461px;
+    margin: auto;
+}
+
+.teaser-line-sp {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.teaser-line-desc-sp {
+    margin-bottom: 30px;
+}
+
+.teaser-link-sp {
+    margin-bottom: 10%;
+}
+
+.teaser-link-sp  img { 
+    width: 50%;
+}
+
+.teaser-line-sp .sp-left { 
+    padding-right: 20px;
+}  
+
+@media screen and (min-width: 750px) {
+
+    .teaser-wrap {
+        width: 655px;
+    } 
+
+    .teaser-line-pc {
+        display: block;
+    }
+
+    .teaser-line-pc .pc-left { 
+        margin-right: 12px;
+    } 
+
+    .teaser-line-sp {
+        display: none;
+    }
+
+    .teaser-header {
+        max-width: 404px;
+    }
+    .teaser-date {
+        width: 365px;
+    }
+    .teaser-copy {
+        width: 426px;
+    }
+    .teaser-link img {
+        width: 126px;
+    }
+    .teaser-slider img {
+        width: 120px;
+    }
+
+}
+
+footer {
+    display: none!important;
+}
+
+</style>
+<main class="teaser-wrap">
+
+            <div class="teaser-header">   
+                <div class="teaser-header-logo"><img src="{{ 'teaser-logo.svg' | asset_url }}" alt="とうのういーもの"></div>
+            </div>
+
+            <div class="teaser-content">  
+                <p class="teaser-date"><img src="{{ 'teaser-date.svg' | asset_url }}" alt="2022.9.17sat"></p>
+                <p class="teaser-copy"><img src="{{ 'teaser-copy.svg' | asset_url }}" alt="とうのうの「いーもの」を揃えたギフトショップ、まもなく開店します！"></p>
+            
+                <div class="teaser-slider-wrap swiper">
+                    <ul class="teaser-slider swiper-wrapper">
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-01.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-02.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-03.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-04.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-05.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-06.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-07.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-08.png" alt=""></li>
+                    <li class="teaser-slider__item swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0614/1843/8904/files/teaser-09.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="teaser-footer">
+                <!--pc-->
+                <div class="teaser-line-pc">
+                    <div class="teaser-flex">
+                        <div class="pc-left">
+                            <div><img src="{{ 'teaser-line-txt-pc.svg' | asset_url }}" alt="LINE友だち追加で500円クーポンプレゼント！" width="311"></div>
+                            <div><img src="{{ 'teaser-line-desc-pc.svg' | asset_url }}" alt="LINEでお友だち追加していただいた方に、オンラインショップで使える500円引きクーポンを進呈中!" width="338"></div>
+                        </div>
+                        <div class="pc-right">
+                            <div><img src="{{ 'teaser-limit.svg' | asset_url }}" alt="9.16 23:59まで" width="114"></div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://page.line.me/849zrtkk" target="_blank" class="teaser-link">
+                        <img src="{{ 'teaser-link-txt.svg' | asset_url }}" alt="ご登録はこちら" width="126">
+                    </a>
+                </div>
+                <!--sp-->
+                <div class="teaser-line-sp">
+                    <div class="teaser-flex">
+                        <div class="sp-left">
+                            <div><img src="{{ 'teaser-limit.svg' | asset_url }}" alt="9.16 23:59まで" width="114"></div>
+                        </div>
+                        <div class="sp-right">
+                            <div><img src="{{ 'teaser-line-txt-sp.svg' | asset_url }}" alt="LINE友だち追加で500円クーポンプレゼント！" width=""></div>
+                        </div>
+                    </div>
+                    <div class="teaser-line-desc-sp"><img src="{{ 'teaser-line-desc-sp.svg' | asset_url }}" alt="LINEでお友だち追加していただいた方に、オンラインショップで使える500円引きクーポンを進呈中!" width=""></div>
+                    <a href="https://page.line.me/849zrtkk" target="_blank" class="teaser-link teaser-link-sp">
+                        <img src="{{ 'teaser-link-txt.svg' | asset_url }}" alt="ご登録はこちら" width="">
+                    </a>
+                </div>  
+                
+            
+            </div>
+
+</main>
+
+<script>
+
+var swiper = new Swiper('.swiper', {
+    autoplay: {
+    delay: 2000
+    },
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+});
+
+</script>
