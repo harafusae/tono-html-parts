@@ -1,0 +1,48 @@
+<ul class="form-custom">
+    <li>[hidden youritem default:get]</li>
+    <li><label class="label-big required">ギフトコードを入力</label>[text* giftcode id:code]
+    </li>
+</ul>    
+<ul class="form-custom">    
+    <li class="form-flex">
+        <div>
+        <label for="textfield03" class="required">姓</label>[text* firstname id:firstname]
+        </div>
+        <div>
+        <label for="textfield04" class="required">名</label>[text* lastname id:lastname]
+        </div>
+    </li>
+    <li><label class="required">メールアドレス</label>[email* your-email]
+    </li>
+    <li><label class="required">郵便番号</label>[text* zip id:zip]
+    </li>
+    <li><label class="required">都道府県</label>[text* pref id:pref]
+    </li>
+    <li><label class="required">市区町村</label>[text* city id:city]
+    </li>
+    <li><label class="required">それ以降のご住所</label>[text* addr id:addr]
+    </li>
+    <li><label class="required">お電話番号</label>[tel* tel id:tel]</li>    
+</ul>
+<ul class="form-custom">
+    <li><label>備考</label>[textarea comment]</li>
+</ul>
+<ul class="form-custom">
+    <li>[checkbox* checkinfo01 "ご承諾事項1"]</li>
+    <li>[checkbox* checkinfo02 "ご承諾事項2"]</li>
+    <li>[checkbox* checkinfo03 "ご承諾事項3"]</li>
+</ul>
+<ul class="form-custom">
+    <p class="page-adress-ttl__attention">
+        [注文を確定する]ボタンを押すと、そのままご注文完了となります。<br>ご入力に誤りなどがないか、念のためご注意ください。
+    </p>
+    [submit class:all-submit id:form-submit "この内容で注文をする"]
+</ul>
+
+<script>
+    //thanks
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+    location = '/thanks/';
+    }, false );
+</script>
+    
